@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "author": "Andreas Lindh",
   "summary": "Install and manage Oracle client",
-  "license": "MIT",
-  "source": "https://github.com/ondmagi/puppet-oracleclient.git",
+  "license": "Apache-2.0",
+  "source": "https://github.com/ondmagi/puppet-oracleclient",
   "project_page": "https://github.com/ondmagi/puppet-oracleclient",
   "issues_url": "https://github.com/ondmagi/puppet-oracleclient/issues",
   "dependencies": [

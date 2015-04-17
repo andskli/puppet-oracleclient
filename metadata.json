@@ -1,0 +1,13 @@
+{
+  "name": "puppet-oracleclient",
+  "version": "0.1.0",
+  "author": "Andreas Lindh",
+  "summary": "Install and manage Oracle client",
+  "license": "MIT",
+  "source": "https://github.com/ondmagi/puppet-oracleclient",
+  "project_page": "https://github.com/ondmagi/puppet-oracleclient",
+  "issues_url": "https://github.com/ondmagi/puppet-oracleclient/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}

@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+# Do not change the following system generated value. 
+#-------------------------------------------------------------------------------
+oracle.install.responseFileVersion=/oracle/install/rspfmt_clientinstall_response_schema_v12.1.0
+
+<% if @oracle_hostname -%>ORACLE_HOSTNAME=<%= @oracle_hostname %><% end %>
+<% if @oracle_groupname -%>UNIX_GROUP_NAME=<%= @oracle_groupname %><% end %>
+<% if @inventory_location -%>INVENTORY_LOCATION=<%= @inventory_location %><% end %>
+<% if @selected_languages -%>SELECTED_LANGUAGES=<%= @selected_languages.map { |lang| "#{lang}" }.join(',') %><% end %>
+<% if @oracle_home %>ORACLE_HOME=<%= @oracle_home %><% end %>
+<% if @oracle_base %>ORACLE_BASE=<%= @oracle_base %><% end %>
+oracle.install.client.installType=<%= @install_type %>
+<% if @install_components -%>oracle.install.client.customComponents=<%= @install_components.map { |component| "\"#{component}\"" }.join(',') %><% end %>
+

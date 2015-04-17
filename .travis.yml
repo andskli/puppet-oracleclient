@@ -22,3 +22,4 @@ gemfile: Gemfile
 branches:
     only:
         - master
+        - develop

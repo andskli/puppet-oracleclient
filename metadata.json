@@ -7,6 +7,16 @@
   "source": "https://github.com/ondmagi/puppet-oracleclient",
   "project_page": "https://github.com/ondmagi/puppet-oracleclient",
   "issues_url": "https://github.com/ondmagi/puppet-oracleclient/issues",
+  "operatingsystem_support": [
+    {
+        "operatingsystem": "RedHat",
+        "operatingsystemrelease": ["7"],
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": ["7"],
+    },
+  ],
   "dependencies": [
     {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
   ]

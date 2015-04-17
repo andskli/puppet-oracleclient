@@ -40,8 +40,9 @@ class oracleclient::install {
   }
   
   exec { 'ldconfig':
-    path      => '/usr/bin:/usr/sbin:/bin:/sbin',
-    subscribe => File['/etc/ld.so.conf.d/oracle_client.conf'],
+    path        => '/usr/bin:/usr/sbin:/bin:/sbin',
+    subscribe   => File['/etc/ld.so.conf.d/oracle_client.conf'],
+    refreshonly => true,
   }
 
 }

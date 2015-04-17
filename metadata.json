@@ -4,7 +4,7 @@
   "author": "Andreas Lindh",
   "summary": "Install and manage Oracle client",
   "license": "MIT",
-  "source": "https://github.com/ondmagi/puppet-oracleclient",
+  "source": "https://github.com/ondmagi/puppet-oracleclient.git",
   "project_page": "https://github.com/ondmagi/puppet-oracleclient",
   "issues_url": "https://github.com/ondmagi/puppet-oracleclient/issues",
   "dependencies": [

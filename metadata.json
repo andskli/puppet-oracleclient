@@ -4,9 +4,9 @@
   "author": "Andreas Lindh",
   "summary": "Install and manage Oracle client",
   "license": "Apache-2.0",
-  "source": "https://github.com/ondmagi/puppet-oracleclient",
-  "project_page": "https://github.com/ondmagi/puppet-oracleclient",
-  "issues_url": "https://github.com/ondmagi/puppet-oracleclient/issues",
+  "source": "https://github.com/andskli/puppet-oracleclient",
+  "project_page": "https://github.com/andskli/puppet-oracleclient",
+  "issues_url": "https://github.com/andskli/puppet-oracleclient/issues",
   "operatingsystem_support": [
     {
         "operatingsystem": "RedHat",

@@ -29,6 +29,7 @@ class oracleclient::install {
     timeout     => 0,
     subscribe   => File[$responsefile],
     refreshonly => true,
+    notify      => Class['oracleclient::post'],
   }
 
   file { '/etc/ld.so.conf.d/oracle_client.conf':
@@ -45,5 +46,7 @@ class oracleclient::install {
     subscribe   => File['/etc/ld.so.conf.d/oracle_client.conf'],
     refreshonly => true,
   }
+
+
 
 }

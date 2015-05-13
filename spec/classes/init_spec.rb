@@ -47,4 +47,18 @@ describe 'oracleclient' do
     end
 
   end
+
+  context 'with install_type => Custom' do
+    let(:params) { 
+      {
+        :install_type => 'Custom'
+      }
+    }
+    
+    it 'should exec root.sh' do
+      should contain_exec("/opt/oracle/home/root.sh")
+    end
+
+  end
+
 end

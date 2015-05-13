@@ -94,12 +94,21 @@ class oracleclient(
     before => Stage['main'],
   }
 
+  stage { 'post':
+  }
+
+  Stage['main'] -> Stage['post']
+
   class { 'oracleclient::prepare':
     stage => prepare,
   }
 
   class { 'oracleclient::install':
-    stage   => main,
+    stage => main,
+  }
+
+  class { 'oracleclient::post':
+    stage => post,
   }
 
 }

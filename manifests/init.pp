@@ -65,6 +65,9 @@
 #  class { 'oracleclient':
 #    installer_source => '/path/to/nfs/oracle/client',
 #    manage_users     => false,
+#    install_type     => 'Custom',
+#    oracle_base      => '/opt/oracle',
+#    oracle_home      => '/opt/oracle/12.1.0',
 #  }
 #
 # === Authors
@@ -84,6 +87,7 @@ class oracleclient(
   $manage_users               = $oracleclient::params::manage_users,
   $oracle_home                = $oracleclient::params::oracle_home,
   $oracle_user                = $oracleclient::params::oracle_user,
+  $oracle_base                = $oracleclient::params::oracle_base,
   $oracle_group               = $oracleclient::params::oracle_group,
   $inventory_location         = $oracleclient::params::inventory_location,
   $selected_languages         = $oracleclient::params::selected_languages,

@@ -46,6 +46,10 @@ Basic usage:
 ```puppet
 class { 'oracleclient':
   installer_source => '/path/to/nfs/oracle/client',
+  manage_users     => false,
+  install_type     => 'Custom',
+  oracle_base      => '/opt/oracle',
+  oracle_home      => '/opt/oracle/12.1.0',
 }
 ```
 

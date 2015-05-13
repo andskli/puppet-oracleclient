@@ -27,6 +27,7 @@ class oracleclient::params {
   $oracle_hostname          = undef
   $manage_users             = true
   $oracle_home              = '/opt/oracle'
+  $oracle_base              = $oracle_home
   $oracle_user              = 'oracle'
   $oracle_group             = 'oinstall'
   $inventory_location       = '/opt/oraInventory'

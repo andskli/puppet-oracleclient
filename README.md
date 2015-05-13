@@ -56,6 +56,11 @@ class { 'oracleclient':
 called `runInstaller`.
 * *manage_users* -- Should we set up users? Probably not if you have a central
 source for authentication like LDAP. Defaults to ***true***.
+* *install_type* -- Defines which installation type, Custom/Admin/InstantClient
+and so on, defaults to **InstantClient**.
+* *oracle_home* -- This is ***REQUIRED***, example '/opt/oracle/12.1.0'
+* *oracle_base* -- This parameter defaults to */opt/oracle*, if this module 
+will manage oracle user/group, this will set the Oracle users home directory 
 
 ## Reference
 

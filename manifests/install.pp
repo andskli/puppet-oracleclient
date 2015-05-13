@@ -5,6 +5,7 @@ class oracleclient::install {
   $install_components   = $oracleclient::install_components
   $installer_debug      = $oracleclient::installer_debug
   $oracle_hostname      = $oracleclient::oracle_hostname
+  $oracle_base          = $oracleclient::oracle_base
   $oracle_home          = $oracleclient::oracle_home
   $oracle_user          = $oracleclient::oracle_user
   $oracle_group         = $oracleclient::oracle_group
@@ -15,7 +16,7 @@ class oracleclient::install {
     $debug_real = '-debug'
   }
 
-  $responsefile = "${oracle_home}/oracleclient_install.rsp"
+  $responsefile = "${oracle_base}/oracleclient_install.rsp"
   file { $responsefile:
     ensure  => file,
     content => template('oracleclient/responsefile_client.rsp.erb'),
@@ -28,6 +29,7 @@ class oracleclient::install {
     timeout     => 0,
     subscribe   => File[$responsefile],
     refreshonly => true,
+    notify      => Class['oracleclient::post'],
   }
 
   file { '/etc/ld.so.conf.d/oracle_client.conf':
@@ -44,5 +46,7 @@ class oracleclient::install {
     subscribe   => File['/etc/ld.so.conf.d/oracle_client.conf'],
     refreshonly => true,
   }
+
+
 
 }

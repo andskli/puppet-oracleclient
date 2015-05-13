@@ -27,8 +27,13 @@
 #   Should we setup oracle users for you? true or false.
 #   TODO: Fix UID/GID option
 #
+# [*oracle_base*]
+#   Oracle base dir, also sets home directory for user to this path 
+#   (default: /opt/oracle)
+#
 # [*oracle_home*]
-#   Oracle home dir, defaults to /opt/oracle
+#   Oracle home dir. This is *REQUIRED*, should probably be set to first three
+#   octets of semantic version of oracle client, i.e. '12.1.0' (default: undef)
 #
 # [*oracle_user*]
 #   Oracle user name (default: oracle)
@@ -89,12 +94,21 @@ class oracleclient(
     before => Stage['main'],
   }
 
+  stage { 'post':
+  }
+
+  Stage['main'] -> Stage['post']
+
   class { 'oracleclient::prepare':
     stage => prepare,
   }
 
   class { 'oracleclient::install':
-    stage   => main,
+    stage => main,
+  }
+
+  class { 'oracleclient::post':
+    stage => post,
   }
 
 }

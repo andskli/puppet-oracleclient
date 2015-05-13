@@ -1,6 +1,7 @@
 class oracleclient::prepare {
 
   $required_packages  = $oracleclient::required_packages
+  $oracle_base        = $oracleclient::oracle_base
   $oracle_user        = $oracleclient::oracle_user
   $oracle_group       = $oracleclient::oracle_group
   $oracle_home        = $oracleclient::oracle_home
@@ -9,6 +10,13 @@ class oracleclient::prepare {
 
   package { $required_packages:
     ensure => installed,
+  }
+
+  file { $oracle_base:
+    ensure => directory,
+    owner  => $oracle_user,
+    group  => $oracle_group,
+    mode   => '0775',
   }
 
   file { $oracle_home:
@@ -44,7 +52,7 @@ class oracleclient::prepare {
       gid        => $oracle_group,
       comment    => 'Oracle',
       groups     => $needed_groups,
-      home       => $oracle_home,
+      home       => $oracle_base,
       managehome => false,
 
     }

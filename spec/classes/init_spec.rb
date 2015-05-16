@@ -40,6 +40,16 @@ describe 'oracleclient' do
       })
     end
 
+    it 'should create ORACLE_BASE directory' do
+      should contain_file("/opt/oracle").with({
+        :ensure => 'directory',
+        :path   => '/opt/oracle',
+        :owner  => 'oracle',
+        :group  => 'oinstall',
+        :mode   => '0775',
+      })
+    end
+
     it 'should create ld.so.conf.d file' do
       should contain_file("/etc/ld.so.conf.d/oracle_client.conf").
         with_content(/\/opt\/oracle\/home/).

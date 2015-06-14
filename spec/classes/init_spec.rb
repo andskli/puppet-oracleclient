@@ -61,4 +61,19 @@ describe 'oracleclient' do
 
   end
 
+  context 'with manage_tnsnames => true' do
+    let(:params) {
+      {
+        :manage_tnsnames => true,
+      }
+    }
+
+    it 'should create tnsnames.ora' do
+      should contain_file("/opt/oracle/home/network/admin/tnsnames.ora").with({
+        :owner => "oracle",
+        :group => "oinstall",
+      })
+    end
+  end
+
 end

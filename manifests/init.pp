@@ -27,6 +27,9 @@
 #   Should we setup oracle users for you? true or false.
 #   TODO: Fix UID/GID option
 #
+# [*manage_tnsnames*]
+#   Should this module manage the tnsnames.ora file?
+#
 # [*oracle_base*]
 #   Oracle base dir, also sets home directory for user to this path 
 #   (default: /opt/oracle)
@@ -45,6 +48,9 @@
 #
 # [*selected_languages*]
 #   Which languages to tell responsefile to install during setup.
+#
+# [*tnsnames*]
+#   A hash containing tnsnames.ora settings
 #
 # [*required_packages*]
 #   A set of packages required to install oracle client.
@@ -85,12 +91,14 @@ class oracleclient(
   $installer_debug            = $oracleclient::params::installer_debug,
   $oracle_hostname            = $oracleclient::params::oracle_hostname,
   $manage_users               = $oracleclient::params::manage_users,
+  $manage_tnsnames            = $oracleclient::params::manage_tnsnames,
   $oracle_home                = $oracleclient::params::oracle_home,
   $oracle_user                = $oracleclient::params::oracle_user,
   $oracle_base                = $oracleclient::params::oracle_base,
   $oracle_group               = $oracleclient::params::oracle_group,
   $inventory_location         = $oracleclient::params::inventory_location,
   $selected_languages         = $oracleclient::params::selected_languages,
+  $tnsnames                   = $oracleclient::params::tnsnames,
   $required_packages          = $oracleclient::params::required_packages
 ) inherits oracleclient::params {
 

@@ -3,7 +3,7 @@
     (DESCRIPTION =
         (ADDRESS_LIST
         <% value_hash["address_list"].each do |address| -%>
-            (ADDRESS = <%= address %>)
+            (ADDRESS = <%= address -%>)
         <% end -%>
         )
     )

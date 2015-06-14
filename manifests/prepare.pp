@@ -40,7 +40,7 @@ class oracleclient::prepare {
     content => "inventory_loc=${inventory_location}\ninst_group=${oracle_group}",
   }
 
-  if $manage_users == true {
+  if $manage_users {
     $needed_groups = [$oracle_group, 'dba']
     
     group { $needed_groups:

@@ -1,0 +1,10 @@
+<% @tnsnames.each do |netsvc, value_hash| -%>
+<%= netsvc %> =
+    (DESCRIPTION =
+        (ADDRESS_LIST
+        <% value_hash["address_list"].each do |address| -%>
+            (ADDRESS = <%= address -%>)
+        <% end -%>
+        )
+    )
+<% end %>

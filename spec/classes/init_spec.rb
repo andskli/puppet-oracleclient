@@ -71,4 +71,32 @@ describe 'oracleclient' do
 
   end
 
+  context 'with manage_tnsnames => true' do
+    let(:params) {
+      {
+        :manage_tnsnames => true,
+        :tnsnames        => {
+          'net_svc_nameETT' => {
+            'address_list'   => [
+              '(PROTOCOL = TCP)(HOST = DBSRV01)(PORT = 1521)',
+              'addr2'
+            ],
+          },
+          'net_svc_nameTVA' => {
+            'address_list'     => [
+              '(PROTOCOL = TCP)(HOST = DBSRV002)(PORT = 1521)',
+            ],
+          },
+        },
+      }
+    }
+
+    it 'should create tnsnames.ora' do
+      should contain_file("/opt/oracle/home/network/admin/tnsnames.ora").with({
+        :owner => "oracle",
+        :group => "oinstall",
+      })
+    end
+  end
+
 end

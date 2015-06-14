@@ -26,12 +26,14 @@ class oracleclient::params {
   $installer_debug          = false
   $oracle_hostname          = undef
   $manage_users             = true
+  $manage_tnsnames          = false
   $oracle_base              = '/opt/oracle'
   $oracle_home              = '/opt/oracle/home'
   $oracle_user              = 'oracle'
   $oracle_group             = 'oinstall'
   $inventory_location       = '/opt/oraInventory'
   $selected_languages       = ['en']
+  $tnsnames                 = undef
 
   $required_packages        = ['binutils', 'compat-libcap1', 'gcc', 'gcc-c++',
       'glibc.i686', 'glibc', 'glibc-devel.i686', 'glibc-devel', 'ksh',
